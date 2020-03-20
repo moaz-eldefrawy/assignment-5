@@ -1,7 +1,9 @@
 package eg.edu.alexu.csd.datastructure.linkedList;
 
+import eg.edu.alexu.csd.datastructure.linkedList.Classes.SinglyLinkedList;
+import eg.edu.alexu.csd.datastructure.linkedList.Classes.Polynomial;
+
 import java.util.Scanner;
-import
 
 public class JavaApplicationUI {
 
@@ -27,19 +29,21 @@ public class JavaApplicationUI {
 
 
         System.out.println("Welcome to the Polynomial Solver!");
-        System.out.println("Please choose an action");
-        System.out.println("-----------------------------");
-        System.out.println("1- Set a polynomial variable");
-        System.out.println("2- Print the value of a polynomial variable");
-        System.out.println("3- Add two polynomials");
-        System.out.println("4- Subtract two polynomials");
-        System.out.println("5- Multiply two polynomials");
-        System.out.println("6- Evaluate a polynomial at some point");
-        System.out.println("7- Clear a polynomial variable");
+        String in = "wahtever";
         while(true)
         {
-
-            String in = cin.nextLine();
+            if(in.length() != 0) {
+                System.out.println("Please choose an action");
+                System.out.println("-----------------------------");
+                System.out.println("1- Set a polynomial variable");
+                System.out.println("2- Print the value of a polynomial variable");
+                System.out.println("3- Add two polynomials");
+                System.out.println("4- Subtract two polynomials");
+                System.out.println("5- Multiply two polynomials");
+                System.out.println("6- Evaluate a polynomial at some point");
+                System.out.println("7- Clear a polynomial variable");
+            }
+            in = cin.nextLine();
             if(in.equals("1"))
             {
                 char poly = '\0';
@@ -68,7 +72,7 @@ public class JavaApplicationUI {
 
                 p.setPolynomial(poly, terms);
                 System.out.println("Polynomial "+ poly + " is set!");
-                p.printPoly(poly);
+                System.out.println(p.print(poly));
             }
             else if(in.equals("2"))
             {
@@ -81,10 +85,10 @@ public class JavaApplicationUI {
                 }
                 while(in.length() != 1 || "ABC".indexOf(poly) == -1);
 
-                if(p.getPolyReference(poly).isEmpty())
+                    if(p.getPolyReference(poly).isEmpty())
                     System.out.println("Polynomial is Empty");
                 else
-                    p.printPoly(poly);
+                    System.out.println(p.print(poly));
             }
             else if(in.equals("3"))
             {
@@ -108,7 +112,7 @@ public class JavaApplicationUI {
 
                 p.add(poly1, poly2);
                 System.out.print("The Sum is: ");
-                p.printPoly('R');
+                System.out.println(p.print('R'));
             }
             else if(in.equals("4"))
             {
@@ -132,7 +136,7 @@ public class JavaApplicationUI {
 
                 p.subtract(poly1, poly2);
                 System.out.print("The difference is: ");
-                p.printPoly('R');
+                System.out.println(p.print('R'));
             }
             else if(in.equals("5"))
             {
@@ -156,7 +160,7 @@ public class JavaApplicationUI {
 
                 p.multiply(poly1, poly2);
                 System.out.print("The product is: ");
-                p.printPoly('R');
+                System.out.println(p.print('R'));
             }
             else if(in.equals("6"))
             {
