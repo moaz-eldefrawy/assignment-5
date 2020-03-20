@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.datastructure.linkedList.Classes;
 
-import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
+import eg.edu.alexu.csd.datastructure.linkedList.Interfaces.*;
 
 public class DoubleLinkedList implements ILinkedList
 {
